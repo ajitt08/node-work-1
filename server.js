@@ -28,11 +28,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', {
-    MaintenanceMsg: 'Site is under Maintenance Mode!'
-  });
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs', {
+//     MaintenanceMsg: 'Site is under Maintenance Mode!'
+//   });
+// });
 
 app.get('/', (req, res) => {
   //res.send('<h1>Hello Express</h1>');
@@ -54,6 +54,12 @@ app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page'
   })
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
+  });
 });
 
 app.get('/bad', (req, res) => {
